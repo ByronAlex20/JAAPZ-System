@@ -13,7 +13,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class ViewSeguridadListadoUsuariosController {
+public class SeguridadListadoUsuariosC {
 	private @FXML TableView<SegUsuario> tvDatos;
 	public void initialize(){
 		llenarDatos();

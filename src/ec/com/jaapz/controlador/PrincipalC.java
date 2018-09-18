@@ -29,7 +29,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-public class PrincipalController {
+public class PrincipalC {
 	private @FXML AnchorPane rootPrincipal;
 	private @FXML SplitPane sp_contenedor;
 	private @FXML Label lblPerfil;

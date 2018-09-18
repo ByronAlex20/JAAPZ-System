@@ -1,6 +1,6 @@
 package ec.com.jaapz.main;
 
-import ec.com.jaapz.controlador.InicioSesionController;
+import ec.com.jaapz.controlador.InicioSesionC;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +19,7 @@ public class LaunchSystem extends Application {
 			stage.setScene(scene);
 			stage.getIcons().add(new Image("/icon.png"));
 			stage.setTitle("Inicio de Sesion");
-			InicioSesionController inicio = (InicioSesionController) root.getController();
+			InicioSesionC inicio = (InicioSesionC) root.getController();
 			inicio.setDialogStage(stage);
 			stage.setMaximized(true);
 			stage.show();

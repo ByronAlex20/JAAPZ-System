@@ -22,7 +22,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 
-public class InicioSesionController {
+public class InicioSesionC {
 	Tooltip toolTip;
 	@FXML private Button btnCancelar;
 	@FXML private Button btnAceptar;

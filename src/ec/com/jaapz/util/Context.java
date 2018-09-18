@@ -1,7 +1,6 @@
 package ec.com.jaapz.util;
 
 import java.sql.Connection;
-import java.util.List;
 
 import ec.com.jaapz.modelo.SegUsuario;
 /*import ec.com.jaapz.modelo.JunAperturaLectura;

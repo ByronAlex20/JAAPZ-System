@@ -35,7 +35,7 @@ public class Ingreso implements Serializable {
 	private Integer usuarioCrea;
 
 	//bi-directional many-to-one association to IngresoDetalle
-	@OneToMany(mappedBy="ingreso")
+	@OneToMany(mappedBy="ingreso", cascade=CascadeType.ALL)
 	private List<IngresoDetalle> ingresoDetalles;
 
 	public Ingreso() {

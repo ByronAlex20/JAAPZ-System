@@ -10,7 +10,17 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Rubro.findAll", query="SELECT r FROM Rubro r")
+@Table(name="rubro")
+@NamedQueries({
+	@NamedQuery(name="Rubro.findAll", query="SELECT r FROM Rubro r WHERE r.estado = 'A' order by r.idRubro asc"),
+	@NamedQuery(name="Rubro.buscarPatron", 
+	query="SELECT r FROM Rubro r "
+			+ "WHERE lower(r.descripcion) like lower(:descripcion) and r.estado = 'A' order by r.idRubro asc"),
+	@NamedQuery(name="Rubro.validarRubro", 
+	query="SELECT r FROM Rubro r "
+			+ "WHERE r.descripcion = (:descripcion) AND r.idRubro <> (:idRubro) and r.estado = 'A' order by r.idRubro asc"),
+})
+
 public class Rubro implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -233,5 +243,9 @@ public class Rubro implements Serializable {
 	public void setTipoRubro(TipoRubro tipoRubro) {
 		this.tipoRubro = tipoRubro;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.descripcion;
+	}
 }

@@ -43,7 +43,7 @@ public class InicioSesionC {
 		List<SegUsuario> usuario;
 		usuario = usuarioDAO.getUsuario(encriptado.Encriptar(txtUsuario.getText()),encriptado.Encriptar(txtClave.getText()));
 		if(usuario.size() == 1){
-			Context.getInstance().setUsuarios(usuario.get(0));
+			Context.getInstance().setUsuariosC(usuario.get(0));
 			Context.getInstance().setPerfil(usuario.get(0).getSegPerfil().getNombre());
 			Context.getInstance().setUsuario(encriptado.Desencriptar(usuario.get(0).getUsuario()));
 			Context.getInstance().setIdUsuario(usuario.get(0).getIdUsuario());

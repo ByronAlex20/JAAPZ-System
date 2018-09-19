@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="436.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.com.jaapz.controlador.ViewSeguridadCambioContraseñaController">
+<AnchorPane prefHeight="436.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.com.jaapz.controlador.SeguridadCambioContraseñaC">
   <!-- TODO Add Nodes -->
   <children>
     <GridPane alignment="CENTER" prefHeight="359.0" prefWidth="397.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="34.0">

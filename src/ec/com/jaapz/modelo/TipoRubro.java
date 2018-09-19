@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table(name="tipo_rubro")
-@NamedQuery(name="TipoRubro.findAll", query="SELECT t FROM TipoRubro t")
+@NamedQuery(name="TipoRubro.findAll", query="SELECT t FROM TipoRubro t where t.estado = 'A'")
 public class TipoRubro implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -76,5 +76,9 @@ public class TipoRubro implements Serializable {
 
 		return rubro;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.descripcion;
+	}
 }

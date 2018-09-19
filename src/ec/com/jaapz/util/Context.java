@@ -2,6 +2,7 @@ package ec.com.jaapz.util;
 
 import java.sql.Connection;
 
+import ec.com.jaapz.modelo.Rubro;
 import ec.com.jaapz.modelo.SegUsuario;
 /*import ec.com.jaapz.modelo.JunAperturaLectura;
 import ec.com.jaapz.modelo.JunContribuyentes;
@@ -20,8 +21,9 @@ public class Context {
 	private Stage stage;
 	private Stage stageModal;
 	private SegUsuario usuarios;
+	private SegUsuario usuariosC;
+	private Rubro rubros;
 	
-	//private JunMaterial materiales;
 	//private JunPlanilla planillas;
 	//private JunCliente cliente;
 	//private JunCuentaCliente cuentaCliente;
@@ -34,7 +36,13 @@ public class Context {
 	public static Context getInstance() {
 		return instance;
 	}
+	public Rubro getRubros() {
+		return rubros;
+	}
 	
+	public void setRubros(Rubro rubros) {
+		this.rubros = rubros;
+	}
 	
 	public Connection getConexion() {
 		return conexion;
@@ -72,7 +80,12 @@ public class Context {
 	public void setUsuarios(SegUsuario usuarios) {
 		this.usuarios = usuarios;
 	}
-
+	public SegUsuario getUsuariosC() {
+		return usuariosC;
+	}
+	public void setUsuariosC(SegUsuario usuariosC) {
+		this.usuariosC = usuariosC;
+	}
 	public int getIdUsuario() {
 		return idUsuario;
 	}
@@ -86,6 +99,4 @@ public class Context {
 	public void setIdPerfil(int idPerfil) {
 		this.idPerfil = idPerfil;
 	}
-	
-	
 }

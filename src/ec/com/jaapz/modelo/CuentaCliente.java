@@ -321,5 +321,9 @@ public class CuentaCliente implements Serializable {
 
 		return reparacion;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.cliente.getNombres() + " " + this.cliente.getApellidos();
+	}
 }

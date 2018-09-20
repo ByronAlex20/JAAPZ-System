@@ -14,14 +14,15 @@ import java.util.List;
 @Table(name="liquidacion_orden")
 @NamedQueries({
 	@NamedQuery(name="LiquidacionOrden.findAll", query="SELECT l FROM LiquidacionOrden l "
-			+ "where lower(l.cuentaCliente.cliente.apellidos) like :patron or lower(l.cuentaCliente.cliente.nombres) like :patron "
-			+ "or lower(l.cuentaCliente.cliente.cedula) like :patron and l.inspeccion.estadoInspeccion = 'REALIZADO' and l.estadoOrden = 'PENDIENTE'"
+			+ "where (lower(l.cuentaCliente.cliente.apellidos) like :patron or lower(l.cuentaCliente.cliente.nombres) like :patron "
+			+ "or lower(l.cuentaCliente.cliente.cedula) like :patron and l.inspeccion.estadoInspeccion = 'REALIZADO' and L.estadoOrden = 'PENDIENTE')"
 			+ "order by l.idLiquidacion asc"),
 	@NamedQuery(name="LiquidacionOrden.buscarLiquidacionOrdenPerfil", query="SELECT l FROM LiquidacionOrden l "
-			+ "where lower(l.cuentaCliente.cliente.apellidos) like :patron or lower(l.cuentaCliente.cliente.nombres) like :patron "
+			+ "where (lower(l.cuentaCliente.cliente.apellidos) like :patron or lower(l.cuentaCliente.cliente.nombres) like :patron "
 			+ "or lower(l.cuentaCliente.cliente.cedula) like :patron and l.inspeccion.estadoInspeccion = 'REALIZADO' and l.estadoOrden = 'PENDIENTE'"
-			+ "and l.usuarioCrea = :idPerfilUsuario order by l.idLiquidacion asc")
+			+ "and l.usuarioCrea = :idPerfilUsuario) order by l.idLiquidacion asc")
 })
+
 public class LiquidacionOrden implements Serializable {
 	private static final long serialVersionUID = 1L;
 

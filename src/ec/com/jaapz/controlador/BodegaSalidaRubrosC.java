@@ -38,7 +38,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
 public class BodegaSalidaRubrosC {
-	@FXML private TextField txtCodRequer;
+	@FXML private TextField txtInspeccion;
 	@FXML private TextField txtNumOrden;
 	@FXML private DatePicker dtpFecha;
 	@FXML private TextField txtUsuario;
@@ -67,6 +67,7 @@ public class BodegaSalidaRubrosC {
 	
 	public void initialize(){
 		try {		
+			LiquidacionOrden liquid = new LiquidacionOrden();
 			Encriptado encriptado = new Encriptado();
 			usuarioLogueado = Context.getInstance().getUsuariosC();
 			txtUsuario.setText(encriptado.Desencriptar(String.valueOf(Context.getInstance().getUsuariosC().getUsuario())));
@@ -99,6 +100,8 @@ public class BodegaSalidaRubrosC {
 	private void recuperarDetalleLiquidacion(LiquidacionOrden liq) {
 		List<InstalacionDetalle> detalle = new ArrayList<InstalacionDetalle>();
 		ObservableList<InstalacionDetalle> datos = FXCollections.observableArrayList();
+		txtInspeccion.setText(String.valueOf(liq.getInspeccion().getIdInspeccion()));
+		txt
 		tvDatos.getColumns().clear();
 		tvDatos.getItems().clear();
 		for(LiquidacionDetalle detallePrevia : liq.getLiquidacionDetalles()) {
@@ -232,13 +235,23 @@ public class BodegaSalidaRubrosC {
 					return new SimpleObjectProperty<String>(String.valueOf(param.getValue().getInspeccion().getReferencia()));
 				}
 			});
+			
+			TableColumn<LiquidacionOrden, String> estadoInspColum = new TableColumn<>("Estado Inspección");
+			estadoInspColum.setMinWidth(10);
+			estadoInspColum.setPrefWidth(80);
+			estadoInspColum.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<LiquidacionOrden, String>, ObservableValue<String>>() {
+				@Override
+				public ObservableValue<String> call(CellDataFeatures<LiquidacionOrden, String> param) {
+					return new SimpleObjectProperty<String>(String.valueOf(param.getValue().getInspeccion().getEstadoInspeccion()));
+				}
+			});
 
 			TableColumn<LiquidacionOrden, String> estadoOrdColum = new TableColumn<>("Estado Liquidacion");
 			estadoOrdColum.setMinWidth(10);
 			estadoOrdColum.setPrefWidth(85);
 			estadoOrdColum.setCellValueFactory(new PropertyValueFactory<LiquidacionOrden, String>("estadoOrden"));
 			
-			tvDatosCli.getColumns().addAll(idColum, ordenColum, fechaOrdenColum, fechaInspColum, cedulaColum, clienteColum, direccionColum, referenciaColum, estadoOrdColum);
+			tvDatosCli.getColumns().addAll(idColum, ordenColum, fechaOrdenColum, fechaInspColum, cedulaColum, clienteColum, direccionColum, referenciaColum, estadoInspColum, estadoOrdColum);
 			tvDatosCli.setItems(datosReq);
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -362,9 +375,9 @@ public class BodegaSalidaRubrosC {
 	
 	boolean validarDatos() {
 		try {
-			if(txtCodRequer.getText().equals("")) {
-				helper.mostrarAlertaAdvertencia("Ingresar Código Requerimiento", Context.getInstance().getStage());
-				txtCodRequer.requestFocus();
+			if(txtInspeccion.getText().equals("")) {
+				helper.mostrarAlertaAdvertencia("Ingresar Nº Inspección", Context.getInstance().getStage());
+				txtInspeccion.requestFocus();
 				return false;
 			}
 			

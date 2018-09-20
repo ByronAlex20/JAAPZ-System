@@ -19,7 +19,11 @@ public class LiquidacionDetalle implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_detalle")
 	private Integer idDetalle;
-
+	
+	private double precio;
+	
+	private Integer cantidad;
+	
 	private String estado;
 
 	@Column(name="estado_orden")
@@ -49,7 +53,15 @@ public class LiquidacionDetalle implements Serializable {
 	public void setIdDetalle(Integer idDetalle) {
 		this.idDetalle = idDetalle;
 	}
+	
+	public Integer getCantidad() {
+		return this.cantidad;
+	}
 
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+	
 	public String getEstado() {
 		return this.estado;
 	}
@@ -80,6 +92,14 @@ public class LiquidacionDetalle implements Serializable {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+	
+	public double getPrecio() {
+		return this.precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 
 	public LiquidacionOrden getLiquidacionOrden() {

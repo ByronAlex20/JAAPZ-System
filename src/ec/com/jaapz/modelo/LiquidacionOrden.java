@@ -12,7 +12,16 @@ import java.util.List;
  */
 @Entity
 @Table(name="liquidacion_orden")
-@NamedQuery(name="LiquidacionOrden.findAll", query="SELECT l FROM LiquidacionOrden l")
+@NamedQueries({
+	@NamedQuery(name="LiquidacionOrden.findAll", query="SELECT l FROM LiquidacionOrden l "
+			+ "where lower(l.cuentaCliente.cliente.apellidos) like :patron or lower(l.cuentaCliente.cliente.nombres) like :patron "
+			+ "or lower(l.cuentaCliente.cliente.cedula) like :patron and l.inspeccion.estadoInspeccion = 'REALIZADO' and l.estadoOrden = 'PENDIENTE'"
+			+ "order by l.idLiquidacion asc"),
+	@NamedQuery(name="LiquidacionOrden.buscarLiquidacionOrdenPerfil", query="SELECT l FROM LiquidacionOrden l "
+			+ "where lower(l.cuentaCliente.cliente.apellidos) like :patron or lower(l.cuentaCliente.cliente.nombres) like :patron "
+			+ "or lower(l.cuentaCliente.cliente.cedula) like :patron and l.inspeccion.estadoInspeccion = 'REALIZADO' and l.estadoOrden = 'PENDIENTE'"
+			+ "and l.usuarioCrea = :idPerfilUsuario order by l.idLiquidacion asc")
+})
 public class LiquidacionOrden implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -34,13 +43,18 @@ public class LiquidacionOrden implements Serializable {
 	private Integer usuarioCrea;
 
 	//bi-directional many-to-one association to LiquidacionDetalle
-	@OneToMany(mappedBy="liquidacionOrden")
+	@OneToMany(mappedBy="liquidacionOrden", cascade=CascadeType.ALL)
 	private List<LiquidacionDetalle> liquidacionDetalles;
 
 	//bi-directional many-to-one association to CuentaCliente
 	@ManyToOne
 	@JoinColumn(name="id_cuenta")
 	private CuentaCliente cuentaCliente;
+	
+	//bi-directional many-to-one association to Inspeccion
+	@ManyToOne
+	@JoinColumn(name="id_inspeccion")
+	private Inspeccion inspeccion;
 
 	public LiquidacionOrden() {
 	}
@@ -122,5 +136,12 @@ public class LiquidacionOrden implements Serializable {
 	public void setCuentaCliente(CuentaCliente cuentaCliente) {
 		this.cuentaCliente = cuentaCliente;
 	}
+	
+	public Inspeccion getInspeccion() {
+		return this.inspeccion;
+	}
 
+	public void setInspeccion(Inspeccion inspeccion) {
+		this.inspeccion = inspeccion;
+	}
 }

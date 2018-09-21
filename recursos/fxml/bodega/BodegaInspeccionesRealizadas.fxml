@@ -310,7 +310,6 @@
                   <RowConstraints maxHeight="471.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <HBox prefHeight="100.0" prefWidth="200.0" />
          </children>
       </GridPane>
    </children>

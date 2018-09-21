@@ -2,6 +2,7 @@ package ec.com.jaapz.util;
 
 import java.sql.Connection;
 
+import ec.com.jaapz.modelo.Planilla;
 import ec.com.jaapz.modelo.Rubro;
 import ec.com.jaapz.modelo.SegUsuario;
 /*import ec.com.jaapz.modelo.JunAperturaLectura;
@@ -23,16 +24,21 @@ public class Context {
 	private SegUsuario usuarios;
 	private SegUsuario usuariosC;
 	private Rubro rubros;
+	private Planilla planillas;
 	
-	//private JunPlanilla planillas;
 	//private JunCliente cliente;
 	//private JunCuentaCliente cuentaCliente;
 	//private JunCategoria categoria;
 	//private JunBarrio barrio;
 	//private List<JunInspeccionNuevoCliente> listaInspecciones;
-	
 	//private JunInspeccionNuevoCliente ordenInspeccion;
 	
+	public Planilla getPlanillas() {
+		return planillas;
+	}
+	public void setPlanillas(Planilla planillas) {
+		this.planillas = planillas;
+	}
 	public static Context getInstance() {
 		return instance;
 	}

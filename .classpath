@@ -6,18 +6,18 @@
 	<classpathentry kind="src" path="recursos/fxml"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/controlsfx-8.40.14.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/jasperreports-6.3.0.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/javax.persistence-2.1.0.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/jdom-1.1.2.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/jfoenix-8.0.7.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/org.eclipse.persistence.antlr-2.5.2.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/org.eclipse.persistence.asm-2.5.2.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/org.eclipse.persistence.core-2.5.2.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/org.eclipse.persistence.jpa.jpql-2.5.2.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/org.eclipse.persistence.jpa-2.5.2.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/org.eclipse.persistence.jpa-2.6.4.jar"/>
-	<classpathentry kind="lib" path="D:/JMGM/UPSE/drivers/postgresql-42.2.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/controlsfx-8.40.14.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/jasperreports-6.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/javax.persistence-2.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/jdom-1.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/jfoenix-8.0.7.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/org.eclipse.persistence.antlr-2.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/org.eclipse.persistence.asm-2.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/org.eclipse.persistence.core-2.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/org.eclipse.persistence.jpa.jpql-2.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/org.eclipse.persistence.jpa-2.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/org.eclipse.persistence.jpa-2.6.4.jar"/>
+	<classpathentry kind="lib" path="D:/instaladores/drivers/drivers/postgresql-42.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

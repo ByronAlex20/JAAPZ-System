@@ -67,7 +67,7 @@ public class BodegaSalidaRubrosC {
 	
 	public void initialize(){
 		try {		
-			LiquidacionOrden liquid = new LiquidacionOrden();
+			//LiquidacionOrden liquid = new LiquidacionOrden();
 			Encriptado encriptado = new Encriptado();
 			usuarioLogueado = Context.getInstance().getUsuariosC();
 			txtUsuario.setText(encriptado.Desencriptar(String.valueOf(Context.getInstance().getUsuariosC().getUsuario())));
@@ -101,7 +101,7 @@ public class BodegaSalidaRubrosC {
 		List<InstalacionDetalle> detalle = new ArrayList<InstalacionDetalle>();
 		ObservableList<InstalacionDetalle> datos = FXCollections.observableArrayList();
 		txtInspeccion.setText(String.valueOf(liq.getInspeccion().getIdInspeccion()));
-		txt
+		//txt
 		tvDatos.getColumns().clear();
 		tvDatos.getItems().clear();
 		for(LiquidacionDetalle detallePrevia : liq.getLiquidacionDetalles()) {
